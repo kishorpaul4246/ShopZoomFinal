@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopZoom</title>
+    <link rel="shortcut icon" href="cartimage.jpg">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            min-height: 100vh;
+            background-color: #f4f6f8;
+        }
+
+        /* Top navbar */
+        .top-navbar {
+            background-color: #f4f6f8;
+            width: 100%;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            color: white;
+        }
+
+        /* Container for img and logo */
+        .imglogo-container {
+            display: flex;
+            align-items: center;
+            color: black;
+            font-family: 'Arial Rounded MT';
+            font-size: 25px; /* Increase font size */
+            font-weight: bold; /* Make text bold */
+        }
+
+        .imglogo img {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            margin-right: 0px;
+        }
+
+        /* Align ShopZoom logo next to imglogo */
+        .imglogo-container {
+            display: flex;
+            align-items: center; /* Vertically centers the text with the image */
+        }
+
+            .imglogo-container .logo {
+                margin-left: 10px; /* Adds space between the image and the ShopZoom text */
+            }
+
+        .top-navbar .search-box {
+            display: flex;
+            align-items: center;
+            background-color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+        }
+
+            .top-navbar .search-box input {
+                background: none;
+                border: none;
+                outline: none;
+                color: black;
+                margin-left: 8px;
+                width: 500px;
+            }
+
+                .top-navbar .search-box input::placeholder {
+                    color: #bbb;
+                }
+
+        .top-navbar .profile {
+            display: flex;
+            align-items: center;
+            color: black;
+        }
+
+            .top-navbar .profile img {
+                border-radius: 50%;
+                width: 40px;
+                height: 40px;
+                margin-right: 50px;
+            }
+
+        /* Left navbar */
+        .side-navbar {
+            width: 150px;
+            background-color: #ffffff;
+            padding-top: 60px;
+            position: fixed;
+            top: 60px;
+            left: 0;
+            bottom: 0;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+            overflow-y: auto;
+        }
+
+            .side-navbar a {
+                display: block;
+                padding: 15px 20px;
+                color: #333;
+                text-decoration: none;
+                font-size: 16px;
+                border-bottom: 1px solid #f0f0f0;
+            }
+
+                .side-navbar a:hover {
+                    background-color: #f4f4f4;
+                }
+
+                .side-navbar a.active {
+                    background-color: #f0f0f0;
+                    color: #333;
+                    font-weight: bold;
+                }
+
+        /* Main content */
+        
+
+               
+        div.parent {
+   
+    
+   margin-top: 100px;
+   margin-left: 200px;
+}
+     
+
+
+ .product-card {
+  display: flex;
+      float: left;
+      margin: 10px;
+      background: white;
+      border: 1px solid #ddd;
+      
+      width: 500px;
+      height: 200px;
+      padding-top:8px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+    }
+    img {
+    /* floats all the images to the left */
+    float: left;
+    margin-top:2px;
+    margin-bottom:4px;
+    margin-right:4px;
+    margin-left:8px;
+    border-radius: 5px;
+    width: 180px;
+    height: 180px;
+   
+    }
+
+    .product-details {
+     
+     
+          margin-left: 20px;
+          margin-right: 20px;
+          margin-top: 7px;
+          margin-bottom: 5px;
+          text-align: left;
+
+    }
+
+    .product-description {
+      width: 280px;
+      height: 100px;
+      margin-top: 15px;
+     text-align: left;
+     color: rgb(54, 54, 54);
+     overflow:  auto ;
+    }
+
+   
+  
+.more-details {
+  display: flex;
+  margin-bottom: 4px;
+  
+}
+
+.product-price {
+  float: left;
+ font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+ 
+ font-weight: bold;
+ margin-right: 40px;
+}
+
+.see-details{
+ 
+      color: #333;
+     font-size: 25;
+     font-weight: bold;
+      cursor: pointer;
+      font-size: 14px
+      align-items: end;
+      justify-content: end;
+     
+    
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- Top Navbar -->
+    <div class="top-navbar">
+        <div class="imglogo-container">
+            <div class="imglogo">
+                <img src="cartimage.jpg" />
+            </div>
+            <div class="logo">ShopZoom</div>
+        </div>
+
+        <div class="search-box">
+            <span>&#128269;</span> <!-- Unicode search icon -->
+            <input type="text" placeholder="Search...">
+        </div>
+
+        <div class="profile">
+            <img src="images\cart.png" alt="Profile Image">
+
+            <a href="login.html"><span>Sign In</span></a>
+        </div>
+    </div>
+
+    <!-- Left Sidebar -->
+    <div class="side-navbar">
+        <a href="#" class="active">Home</a>
+        <a href="#">Wishlist</a>
+        <a href="#">Cart</a>
+        <a href="#">Order</a>
+        <a href="#">Nearby Shops</a>
+        <a href="#">My Location</a>
+        <a href="myStore.html">My Store</a>
+        <a href="#">Settings</a>
+        <a href="#">My Profile</a>
+        <a href="#">Logout</a>
+
+    </div>
+
+    <!-- Main Content -->
+    <div class="parent">
+        
+
+            <div class="product-card">
+                <img  src="https://images.pexels.com/photos/3408744/pexels-photo-3408744.jpeg"
+                alt="Northern Winter Sky Image"/>
+               
+                <div class="product-details">
+                  <h3 class="product-title">Brick Making Machines</h3>
+                 <div class="product-description">
+                  <p>
+                    A brick making machine, also known ae, is in a controlled and automated manner. It replaces the traditional manual brick-making methods that are labor-intensive and time-consuming.
+                  </p>
+                 </div>
+                 <div class="more-details" >
+                  <div class="product-price">
+                    <label>Rs. 456 </label>
+                  </div>
+                  <div class="see-details">
+                   <button>See Product Details</button>
+                  </div>
+                 </div>
+                </div>
+                
+              </div>
+
+              <div class="product-card">
+                <img  src="https://images.pexels.com/photos/3408744/pexels-photo-3408744.jpeg"
+                alt="Northern Winter Sky Image"/>
+               
+                <div class="product-details">
+                  <h3 class="product-title">Brick Making Machines</h3>
+                 <div class="product-description">
+                  <p>
+                    A brick making machine, also known ae, is in a controlled and automated manner. It replaces the traditional manual brick-making methods that are labor-intensive and time-consuming.
+                  </p>
+                 </div>
+                 <div class="more-details" >
+                  <div class="product-price">
+                    <label>Rs. 456 </label>
+                  </div>
+                  <div class="see-details">
+                   <button>See Product Details</button>
+                  </div>
+                 </div>
+                </div>
+                
+              </div>
+
+              <div class="product-card">
+                <img  src="https://images.pexels.com/photos/3408744/pexels-photo-3408744.jpeg"
+                alt="Northern Winter Sky Image"/>
+               
+                <div class="product-details">
+                  <h3 class="product-title">Brick Making Machines</h3>
+                 <div class="product-description">
+                  <p>
+                    A brick making machine, also known ae, is in a controlled and automated manner. It replaces the traditional manual brick-making methods that are labor-intensive and time-consuming.
+                  </p>
+                 </div>
+                 <div class="more-details" >
+                  <div class="product-price">
+                    <label>Rs. 456 </label>
+                  </div>
+                  <div class="see-details">
+                   <button>See Product Details</button>
+                  </div>
+                 </div>
+                </div>
+                
+              </div>
+
+              <div class="product-card">
+                <img  src="https://images.pexels.com/photos/3408744/pexels-photo-3408744.jpeg"
+                alt="Northern Winter Sky Image"/>
+               
+                <div class="product-details">
+                  <h3 class="product-title">Brick Making Machines</h3>
+                 <div class="product-description">
+                  <p>
+                    A brick making machine, also known ae, is in a controlled and automated manner. It replaces the traditional manual brick-making methods that are labor-intensive and time-consuming.
+                  </p>
+                 </div>
+                 <div class="more-details" >
+                  <div class="product-price">
+                    <label>Rs. 456 </label>
+                  </div>
+                  <div class="see-details">
+                   <button>See Product Details</button>
+                  </div>
+                 </div>
+                </div>
+                
+              </div>
+
+              <div class="product-card">
+                <img  src="https://images.pexels.com/photos/3408744/pexels-photo-3408744.jpeg"
+                alt="Northern Winter Sky Image"/>
+               
+                <div class="product-details">
+                  <h3 class="product-title">Brick Making Machines</h3>
+                 <div class="product-description">
+                  <p>
+                    A brick making machine, also known ae, is in a controlled and automated manner. It replaces the traditional manual brick-making methods that are labor-intensive and time-consuming.
+                  </p>
+                 </div>
+                 <div class="more-details" >
+                  <div class="product-price">
+                    <label>Rs. 456 </label>
+                  </div>
+                  <div class="see-details">
+                   <button>See Product Details</button>
+                  </div>
+                 </div>
+                </div>
+                
+              </div>
+
+              <div class="product-card">
+                <img  src="https://images.pexels.com/photos/3408744/pexels-photo-3408744.jpeg"
+                alt="Northern Winter Sky Image"/>
+               
+                <div class="product-details">
+                  <h3 class="product-title">Brick Making Machines</h3>
+                 <div class="product-description">
+                  <p>
+                    A brick making machine, also known ae, is in a controlled and automated manner. It replaces the traditional manual brick-making methods that are labor-intensive and time-consuming.
+                  </p>
+                 </div>
+                 <div class="more-details" >
+                  <div class="product-price">
+                    <label>Rs. 456 </label>
+                  </div>
+                  <div class="see-details">
+                   <button>See Product Details</button>
+                  </div>
+                 </div>
+                </div>
+                
+              </div>
+
+              <div class="product-card">
+                <img  src="https://images.pexels.com/photos/3408744/pexels-photo-3408744.jpeg"
+                alt="Northern Winter Sky Image"/>
+               
+                <div class="product-details">
+                  <h3 class="product-title">Brick Making Machines</h3>
+                 <div class="product-description">
+                  <p>
+                    A brick making machine, also known ae, is in a controlled and automated manner. It replaces the traditional manual brick-making methods that are labor-intensive and time-consuming.
+                  </p>
+                 </div>
+                 <div class="more-details" >
+                  <div class="product-price">
+                    <label>Rs. 456 </label>
+                  </div>
+                  <div class="see-details">
+                   <button>See Product Details</button>
+                  </div>
+                 </div>
+                </div>
+                
+              </div>
+
+              <div class="product-card">
+                <img  src="https://images.pexels.com/photos/3408744/pexels-photo-3408744.jpeg"
+                alt="Northern Winter Sky Image"/>
+               
+                <div class="product-details">
+                  <h3 class="product-title">Brick Making Machines</h3>
+                 <div class="product-description">
+                  <p>
+                    A brick making machine, also known ae, is in a controlled and automated manner. It replaces the traditional manual brick-making methods that are labor-intensive and time-consuming.
+                  </p>
+                 </div>
+                 <div class="more-details" >
+                  <div class="product-price">
+                    <label>Rs. 456 </label>
+                  </div>
+                  <div class="see-details">
+                   <button>See Product Details</button>
+                  </div>
+                 </div>
+                </div>
+                
+              </div>
+
+              <div class="product-card">
+                <img  src="https://images.pexels.com/photos/3408744/pexels-photo-3408744.jpeg"
+                alt="Northern Winter Sky Image"/>
+               
+                <div class="product-details">
+                  <h3 class="product-title">Brick Making Machines</h3>
+                 <div class="product-description">
+                  <p>
+                    A brick making machine, also known ae, is in a controlled and automated manner. It replaces the traditional manual brick-making methods that are labor-intensive and time-consuming.
+                  </p>
+                 </div>
+                 <div class="more-details" >
+                  <div class="product-price">
+                    <label>Rs. 456 </label>
+                  </div>
+                  <div class="see-details">
+                   <button>See Product Details</button>
+                  </div>
+                 </div>
+                </div>
+                
+              </div>
+
+              <div class="product-card">
+                <img  src="https://images.pexels.com/photos/3408744/pexels-photo-3408744.jpeg"
+                alt="Northern Winter Sky Image"/>
+               
+                <div class="product-details">
+                  <h3 class="product-title">Brick Making Machines</h3>
+                 <div class="product-description">
+                  <p>
+                    A brick making machine, also known ae, is in a controlled and automated manner. It replaces the traditional manual brick-making methods that are labor-intensive and time-consuming.
+                  </p>
+                 </div>
+                 <div class="more-details" >
+                  <div class="product-price">
+                    <label>Rs. 456 </label>
+                  </div>
+                  <div class="see-details">
+                   <button>See Product Details</button>
+                  </div>
+                 </div>
+                </div>
+                
+              </div>
+
+              <div class="product-card">
+                <img  src="https://images.pexels.com/photos/3408744/pexels-photo-3408744.jpeg"
+                alt="Northern Winter Sky Image"/>
+               
+                <div class="product-details">
+                  <h3 class="product-title">Brick Making Machines</h3>
+                 <div class="product-description">
+                  <p>
+                    A brick making machine, also known ae, is in a controlled and automated manner. It replaces the traditional manual brick-making methods that are labor-intensive and time-consuming.
+                  </p>
+                 </div>
+                 <div class="more-details" >
+                  <div class="product-price">
+                    <label>Rs. 456 </label>
+                  </div>
+                  <div class="see-details">
+                   <button>See Product Details</button>
+                  </div>
+                 </div>
+                </div>
+                
+              </div>
+
+              <div class="product-card">
+                <img  src="https://images.pexels.com/photos/3408744/pexels-photo-3408744.jpeg"
+                alt="Northern Winter Sky Image"/>
+               
+                <div class="product-details">
+                  <h3 class="product-title">Brick Making Machines</h3>
+                 <div class="product-description">
+                  <p>
+                    A brick making machine, also known ae, is in a controlled and automated manner. It replaces the traditional manual brick-making methods that are labor-intensive and time-consuming.
+                  </p>
+                 </div>
+                 <div class="more-details" >
+                  <div class="product-price">
+                    <label>Rs. 456 </label>
+                  </div>
+                  <div class="see-details">
+                   <button>See Product Details</button>
+                  </div>
+                 </div>
+                </div>
+                
+              </div>
+
+              
+
+            
+             
+    </div>
+</body>
+</html>
