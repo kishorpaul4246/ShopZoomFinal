@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - ShopZoom</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .signup-container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+            .signup-container h1 {
+                margin-bottom: 20px;
+                font-size: 24px;
+                color: #333;
+            }
+
+            .signup-container input[type="text"],
+            .signup-container input[type="email"],
+            .signup-container input[type="password"],
+            .signup-container input[type="tel"],
+            .signup-container input[type="date"] {
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 20px;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+            }
+
+            .signup-container select {
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 20px;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+            }
+
+            .signup-container .otp-field {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+                .signup-container .otp-field input {
+                    flex: 1;
+                    margin-right: 10px;
+                }
+
+                .signup-container .otp-field button {
+                    padding: 8px;
+                    background-color: #4CAF50;
+                    color: white;
+                    border: none;
+                    border-radius: 3px;
+                    cursor: pointer;
+                }
+
+                    .signup-container .otp-field button:hover {
+                        background-color: #45a049;
+                    }
+
+            .signup-container input[type="submit"] {
+                width: 100%;
+                padding: 10px;
+                background-color: #4CAF50;
+                border: none;
+                color: white;
+                font-size: 16px;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+
+                .signup-container input[type="submit"]:hover {
+                    background-color: #45a049;
+                }
+
+            .signup-container .signin-link {
+                margin-top: 20px;
+                display: block;
+                color: #4CAF50;
+                text-decoration: none;
+            }
+
+                .signup-container .signin-link:hover {
+                    text-decoration: underline;
+                }
+    </style>
+</head>
+<body>
+
+    <div class="signup-container">
+        <h1>Create a ShopZoom Account</h1>
+        <form action="#" method="POST">
+            <input type="text" placeholder="Full Name" required>
+
+            <!-- Mobile number with OTP -->
+            <div class="otp-field">
+                <table>
+                    <ul>
+                    <tr>
+
+                        <input type="tel" placeholder="Mobile Number" pattern="[0-9]{10}" required>
+
+                    </tr>
+                    <tr><button type="button">Send OTP</button></tr>
+                    </ul>
+                </table>
+            </div>
+
+            <!-- OTP input -->
+            <input type="text" placeholder="Enter OTP" required>
+
+            <!-- Gender selection -->
+            <select name="gender" required>
+                <option value="" disabled selected>Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+
+            <!-- Date of Birth -->
+            <input type="date" placeholder="Date of Birth" required>
+
+            <!-- Email Address -->
+            <input type="email" placeholder="Email Address" required>
+
+            <!-- Password -->
+            <input type="password" placeholder="Create Password" required>
+
+            <!-- Submit Button -->
+            <input type="submit" value="Sign Up">
+        </form>
+        <a href="login.html" class="signin-link">Already have an account? Sign In</a>
+    </div>
+
+</body>
+</html>
